@@ -1,8 +1,47 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destrix</title>
+    <script>
+         const queryString = window.location.search;
+        // console.log(queryString);
+        const parameters = new URLSearchParams(queryString);
 
-<html>
-    <head>
-        <title>Redirecting | Destrix</title>
-        <meta http-equiv="refresh" content="0; URL=https://github.com/DestrixApp"/>
-    </head>
+        if (parameters.has("t") == true){
+            let to = parameters.get("t");
+            // console.log(to);
+            // setTimeout(() => {
+                // if (parameters.has("direct")==true){
+                //     // console.log(parameters.get("direct"));
+                //     var history = parameters.get("h");
+
+                //     if (parameters.get("direct")=="true"){
+                //         redirect(to,true,history);
+                //     }else{
+                //         redirect(to,false,history);
+                //     };
+                // }else{
+                    redirect(to);
+                // };
+            // }, 1500);
+        } else {
+            redirect('docs');
+        };
+
+        function redirect(to){
+            to = to.toLowerCase()
+
+            if (to == 'discord'){
+                window.location.href = 'https://wolfite.dev?to=discord';
+            } else {
+                window.location.href = 'https://docs.destrix.app';
+            }
+        };
+    </script>
+</head>
+<body>
+    
+</body>
 </html>
